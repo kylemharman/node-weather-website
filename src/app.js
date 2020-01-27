@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode');
 
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -104,7 +105,7 @@ app.get('*', (req, res) => { // 404 need to come last
     })
 })
 
-app.listen(3000, () => {
-    console.log('Sever is up on port 3000.')
+app.listen(port, () => {
+    console.log('Sever is up on port.' + port)
 });
 
